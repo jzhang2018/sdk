@@ -208,7 +208,7 @@ class DataGroupConfigConvV10(DataGroupConfigConv):
         for record in d_group.get('records', []):
             for ip in record:
                 ip_address = None
-                if "%" in record:
+                if "%" in ip:
                     ip_address = ip.split('%')[0]
                     vrf = ip.split('%')[1].split('/')[0]
                     conv_utils.add_vrf(avi_config, vrf, None)
